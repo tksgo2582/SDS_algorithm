@@ -1,3 +1,4 @@
+// 달리기 문제 -> 인덱스 트리로도 풀 수 있다.
 #include <bits/stdc++.h>
 using namespace std;
 int N;

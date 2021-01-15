@@ -4,7 +4,7 @@ using namespace std;
 int main(){
     priority_queue <pair<int, int>> pq;
 
-    pq.push({-1,20});
+    pq.push({-1,20}); // qp는 내림차순 정렬
     pq.push({1,2});
 
     cout << pq.top().second;
@@ -13,17 +13,17 @@ int main(){
 int S, N, M, K;
 long long *nums;
 long long *tree;
-
+// 인덱스 트리 생성
 long long makeTree(int node, int left, int right){
     if(left == right){ // 리프노드
-        if(left <= N){
-            return tree[node] = nums[left];
+        if(left <= N){ // 마지막 층에 도착한다면 node는 S 이상, left 는 1 ~ S
+            return tree[node] = nums[left]; 
         }else{
             return tree[node] = 0;
         }
     }
 
-    int mid = (left + right) / 2;
+    int mid = (left + right) / 2;   //리프노드 아니라면 아래로 탐색
 
     tree[node] = makeTree(node*2, left, mid);
     tree[node] += makeTree(node*2+1, mid+1,right);
