@@ -1,4 +1,6 @@
-//3425
+//3425 고스택
+// 어려운 부분은 없지만 
+// div, mod 할때 주의 할점. 0으로 나눈거나 음수 연산의 경우 예외처리
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -91,7 +93,7 @@ int MUL() {
     } else
         return 1;
 }
-int DIV() {
+int DIV() {     
     int neg = 0 ;
     if (s.size() >= 2) {
         long long num1 = s.top();
