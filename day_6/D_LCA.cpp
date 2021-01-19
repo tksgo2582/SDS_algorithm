@@ -49,7 +49,7 @@ int lca(int a, int b){
     for(int i =17, j =(1 << 17); i >=0; i--, j/=2){
         if(ancen[a][i] != ancen[b][i]){
             a = ancen[a][i];
-            b = ancen[b][i]l
+            b = ancen[b][i];
         }
     }
     //LCA의 바로 아래까지 옴
@@ -57,8 +57,8 @@ int lca(int a, int b){
 }
 
 int main(){
-    cin >> N >> M;
-    for(int i =0; i < M; i++){
+    cin >> N;
+    for(int i =0; i < N; i++){
         int a,b;
         cin >> a>>b;
         //일단 양방향으로 연결
@@ -75,8 +75,10 @@ int main(){
         }
     }
     cin >> M;
-    for(int i =0 ;i < M ; i++){
+    for(int i =0 ; i < M ; i++){
         int a,b;
         cin >> a >> b;
+        cout << lca(a, b) << "\n";
     }
+    
 }

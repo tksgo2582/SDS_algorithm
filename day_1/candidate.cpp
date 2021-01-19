@@ -58,7 +58,8 @@ int main() {
         }
     }
     for (int i = 1; i < 101; ++i)
-        if (when[i]) cout << i << ' ';
+        if (when[i]) 
+            cout << i << ' ';
 
     return 0;
 }
