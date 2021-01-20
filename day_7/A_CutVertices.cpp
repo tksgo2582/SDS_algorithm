@@ -30,11 +30,11 @@ int dfs(int parent, int cur, bool isRoot){
         }else{  // 새롭게 방문하는 경우, 그 자식들이 어딘가 연결되어 있는지 체크
             int tmp = dfs(cur ,next, false);
             min_visit_order = min(min_visit_order, tmp);
-            if( !isRoot && tmp >= visited_order[cur]){ //루트가 아니고, 
-                ans[cur] = true;
+            if( !isRoot && tmp >= visited_order[cur]){ //루트가 아니고, 자식이 방문한 정점들이 모두 다보다 크거나 작다면
+                ans[cur] = true;                        //단절점 on
                 //cnt++;
             }
-            chlcnt++;
+            chlcnt++;                                   //새롭게 방문한 자식 수 
         }
     }
     //만약 리프노드라면, 단절점 처리를 해주지 않음.
