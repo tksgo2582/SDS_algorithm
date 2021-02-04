@@ -2,7 +2,7 @@
 using namespace std;
 
 int N , L;
-deque<pair<int, int>> pq;
+deque<pair<int, int>> pq;   //deque 사용법
 
 int main(){
 
