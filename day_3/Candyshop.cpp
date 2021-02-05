@@ -52,17 +52,17 @@ void update(int node, int left, int right, int index, long long diff) {
 }
 // 강사님 쿼리 , 조건이 좀 더 간단.
 int query_2(int node, int left, int right, int target) {
-    if ((left == right)) {
+    if ((left == right)) {      //단말일 경우
         cout << left << "\n";
         return left;
     } else {
         int mid = (left + right) / 2;
-        if (tree[node * 2] >= target) {
+        if (tree[node * 2] >= target) { //왼쪽 자식에 속하는 경우
             return query(node * 2, left, mid, target);
         }
-        target -= tree[node * 2];
+        target -= tree[node * 2];   // 왼쪽 자식의 합 제외
 
-        if (tree[node * 2 + 1] >= target) {
+        if (tree[node * 2 + 1] >= target) { //오른쪽 자식에 속하는 경우
             return query(node * 2 + 1, mid + 1, right, target);
         }
     }
