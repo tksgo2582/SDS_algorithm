@@ -13,14 +13,14 @@ bool visited[MAX];
 //
 //root = 1
 
-void dfs(int parent, int cur, int param_depth){
+void dfs(int parent, int cur, int cur_depth){
     if(visited[cur])
         return;
     visited[cur] = true;
-    depth[cur] = param_depth;
+    depth[cur] = cur_depth;
     ancen[cur][0] = parent;
-    for (size_t i = 0; i < adj[cur].size(); i++)    {
-        dfs(cur, adj[cur][i], param_depth + 1);
+    for (size_t i = 0; i < adj[cur].size(); i++){
+        dfs(cur, adj[cur][i], cur_depth + 1);
     }
 }
 
@@ -38,7 +38,7 @@ int lca(int a, int b){
         for(int i = 0, j =1; i<=17; i++, j*=2){
             //if(diff & (1 <<i))
             if(diff & j){
-                a = ancen[a][j];
+                a = ancen[a][i];
             }
         }
     }
@@ -57,8 +57,11 @@ int lca(int a, int b){
 }
 
 int main(){
+    ios_base :: sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
     cin >> N;
-    for(int i =0; i < N; i++){
+    for(int i =0; i < N-1; i++){
         int a,b;
         cin >> a>>b;
         //일단 양방향으로 연결
