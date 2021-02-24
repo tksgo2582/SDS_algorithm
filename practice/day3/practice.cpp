@@ -9,10 +9,10 @@ ll *nums;
 long long maketree(int node, int left, int right){
     if(left == right){
         if(left <= N){
-            tree[node] = nums[node];
+            return tree[node] = nums[node];
         }
         else
-            tree[node] = 0;
+            return tree[node] = 0;
     }
 
     int mid = (left + right) /2; 
